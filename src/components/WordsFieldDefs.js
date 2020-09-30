@@ -1,3 +1,9 @@
+import ImageUrlTableField from './ImageUrlTableField';
+
+function urlFormatter(value) {
+  return value ? value.substring(0, 60) + "..." : "Sin url"
+};
+
 export default [
   {
     title: "Id",
@@ -21,13 +27,14 @@ export default [
   },
   {
     title: "Imagen",
-    name: "imageUrl",
-    callback: "formatUrl",
+    name: ImageUrlTableField,
+    sortField: 'imageUrl',
   },
   {
     title: "Video",
     name: "videoUrl",
-    callback: "formatUrl",
+    sortField: 'videoUrl',
+    formatter: urlFormatter
   },
-  "__slot:actions",
+  "actions",
 ];

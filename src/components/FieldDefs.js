@@ -30,7 +30,9 @@ export default [
     title: "Contenido",
     name: "rawContent",
     sortField: "rawContent",
-    callback: "formatRawContent",
+    formatter: function (value) {
+      return value ? value.substring(0, 30) + "..." : "Sin contenido";
+    },
   },
-  "__slot:actions",
+  "actions",
 ];

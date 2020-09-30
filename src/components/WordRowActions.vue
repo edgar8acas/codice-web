@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     showWordDetails() {
-      this.$emit("showWordDetails", this.rowData);
+      this.$emit("vuetable:show-details", this.rowData);
     },
   },
 };

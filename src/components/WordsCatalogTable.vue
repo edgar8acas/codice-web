@@ -70,7 +70,7 @@ export default {
         on: {
           "vuetable:pagination-data": this.onPaginationData,
           "vuetable:load-success": this.onLoadSuccess,
-          "vuetable:row-clicked": this.showWordDetails,
+          "vuetable:show-details": this.showWordDetails,
         },
         scopedSlots: {
           actions: function (props) {
@@ -121,8 +121,9 @@ export default {
     onChangePage(page) {
       this.$refs.vuetable.changePage(page);
     },
-    showWordDetails(word) {
-      this.$emit("showWordDetails", word);
+    showWordDetails(data) {
+      console.log('herehere');
+      this.$emit("showWordDetails", data);
     },
   },
 };
